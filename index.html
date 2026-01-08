@@ -7,30 +7,14 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <style>
-    body, h1,h2,h3,h4,h5,h6 {font-family: "Montserrat", sans-serif}
-    .w3-row-padding img {
-      height: 260px;
-    }
-    /* Set the width of the sidebar to 120px */
-    .w3-sidebar {width: 120px;background: #222;}
-    /* Add a left margin to the "page content" that matches the width of the sidebar (120px) */
-    #main {margin-left: 120px}
-    /* Remove margins from "page content" on small screens */
-    @media only screen and (max-width: 600px) {#main {margin-left: 0}}
-
-    #projects img{
-      aspect-ratio: 3/2;
-      object-fit: contain;
-    }
-    </style>
+    <link rel="stylesheet" href="style.css">
   </head>
 <body class="w3-black">
 
 <!-- Icon Bar (Sidebar - hidden on small screens) -->
 <nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
   <!-- Avatar image in top left corner -->
-  <img src="./Photos/Shiv Photo.jpg" style="width:100%">
+  <img src="images/self.jpg" style="width:100%">
   <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
     <i class="fa fa-home w3-xxlarge"></i>
     <p>HOME</p>
@@ -65,7 +49,7 @@
   <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
     <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Shiv Modi.</h1>
     <p>Web Developer</p>
-    <img src="./Photos/Shiv Photo.jpg" alt="boy" class="w3-image" width="692" height="808">
+    <img src="images/self.jpg" alt="boy" class="w3-image" width="692" height="808">
   </header>
 
   <!-- About Section -->
@@ -112,9 +96,14 @@
       </div>
     </div> -->
 
-    <button class="w3-button w3-light-grey w3-padding-large w3-section">
+    <!-- <button class="w3-button w3-light-grey w3-padding-large w3-section">
       <i class="fa fa-download"></i> Download Resume
-    </button>
+    </button> -->
+    <a href="resume/shiv-modi-resume.pdf" target="_blank"
+      class="w3-button w3-light-grey w3-padding-large w3-section">
+      <i class="fa fa-download"></i> Download Resume
+    </a>
+
     
     <div class="w3-container w3-card w3-black w3-margin-bottom">
       <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
@@ -170,21 +159,21 @@
     <!-- First Photo Grid-->
     <div class="w3-row-padding">
       <div class="w3-third w3-container w3-margin-bottom">
-        <img src="./Photos/brain.avif" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <img src="images/brain.avif" alt="Norway" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container w3-white">
           <p><b>Brain Tumor Detection</b></p>
           <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
         </div>
       </div>
       <div class="w3-third w3-container w3-margin-bottom">
-        <img src="./Photos/line.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <img src="images/line.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container w3-white">
           <p><b>Line Follower</b></p>
           <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
         </div>
       </div>
       <div class="w3-third w3-container">
-        <img src="./Photos/loan.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <img src="images/loan.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container w3-white">
           <p><b>Loan Approval</b></p>
           <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
@@ -195,21 +184,21 @@
     <!-- Second Photo Grid-->
     <div class="w3-row-padding">
       <div class="w3-third w3-container w3-margin-bottom">
-        <img src="./Photos/moon.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <img src="images/moon.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container w3-white">
           <p><b>Virtual Moon Lander</b></p>
           <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
         </div>
       </div>
       <div class="w3-third w3-container w3-margin-bottom">
-        <img src="./Photos/pendulum.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <img src="images/pendulum.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container w3-white">
           <p><b>Inverted Pendulum</b></p>
           <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
         </div>
       </div>
       <div class="w3-third w3-container">
-        <img src="./Photos/ser.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
+        <img src="images/ser.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
         <div class="w3-container w3-white">
           <p><b>Speech Emotion Recognition</b></p>
           <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
@@ -261,5 +250,6 @@
 <!-- END PAGE CONTENT -->
 </div>
 
+<script src="script.js"></script>
 </body>
 </html>
