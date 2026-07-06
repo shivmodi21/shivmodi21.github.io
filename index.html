@@ -1,258 +1,510 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Shiv Modi</title>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Shiv Modi | Software Engineer</title>
+
+    <meta name="description"
+        content="Portfolio of Shiv Modi - Software Engineer specializing in Backend Development and Applied Machine Learning.">
+
     <link rel="stylesheet" href="style.css">
-  </head>
-<body class="w3-black">
 
-<!-- Icon Bar (Sidebar - hidden on small screens) -->
-<nav class="w3-sidebar w3-bar-block w3-small w3-hide-small w3-center">
-  <!-- Avatar image in top left corner -->
-  <img src="images/self.jpg" style="width:100%">
-  <a href="#" class="w3-bar-item w3-button w3-padding-large w3-black">
-    <i class="fa fa-home w3-xxlarge"></i>
-    <p>HOME</p>
-  </a>
-  <a href="#about" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-user w3-xxlarge"></i>
-    <p>ABOUT</p>
-  </a>
-  <a href="#projects" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-book w3-xxlarge"></i>
-    <p>PROJECTS</p>
-  </a>
-  <a href="#contact" class="w3-bar-item w3-button w3-padding-large w3-hover-black">
-    <i class="fa fa-envelope w3-xxlarge"></i>
-    <p>CONTACT</p>
-  </a>
-</nav>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<!-- Navbar on small screens (Hidden on medium and large screens) -->
-<div class="w3-top w3-hide-large w3-hide-medium" id="myNavbar">
-  <div class="w3-bar w3-black w3-opacity w3-hover-opacity-off w3-center w3-small">
-    <a href="#" class="w3-bar-item w3-button" style="width:25% !important">HOME</a>
-    <a href="#about" class="w3-bar-item w3-button" style="width:25% !important">ABOUT</a>
-    <a href="#projects" class="w3-bar-item w3-button" style="width:25% !important">PROJECTS</a>
-    <a href="#contact" class="w3-bar-item w3-button" style="width:25% !important">CONTACT</a>
-  </div>
-</div>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
-<!-- Page Content -->
-<div class="w3-padding-large" id="main">
-  <!-- Header/Home -->
-  <header class="w3-container w3-padding-32 w3-center w3-black" id="home">
-    <h1 class="w3-jumbo"><span class="w3-hide-small">I'm</span> Shiv Modi.</h1>
-    <p class="w3-text-grey w3-large">
-      Software Engineer · Backend & Applied Machine Learning
-    </p>
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
 
-    <img src="images/self.jpg" alt="boy" class="w3-image" width="692" height="808">
-  </header>
+<body>
 
-  <!-- About Section -->
-  <div class="w3-content w3-justify w3-text-grey w3-padding-64" id="about">
-    <h2 class="w3-text-light-grey">Shiv Modi</h2>
-    <hr style="width:200px" class="w3-opacity">
-    <p>
-    I am a final-year Dual Degree (B.Tech + M.Tech) student with a strong interest in
-    software engineering, backend systems, and applied machine learning. I enjoy
-    building end-to-end projects, working close to system logic, and solving
-    real-world problems using clean, efficient code.
-    <br><br>
-    My recent work includes backend-driven applications and ML-based systems,
-    with a focus on correctness, scalability, and clarity rather than flashy UI.
-    </p>
+    <!-- ================= NAVIGATION ================= -->
 
-    <h3 class="w3-padding-16 w3-text-light-grey">Technical Skills</h3>
+    <header>
 
-    <p class="w3-wide">Programming</p>
-    <p class="w3-text-grey">C++, Python</p>
+        <nav>
 
-    <p class="w3-wide">Backend & Systems</p>
-    <p class="w3-text-grey">REST APIs, SQL, Git</p>
+            <h2>Shiv Modi</h2>
 
-    <p class="w3-wide">Machine Learning</p>
-    <p class="w3-text-grey">NumPy, Pandas, PyTorch, Scikit-learn</p>
-    
-    <!-- <div class="w3-row w3-center w3-padding-16 w3-section w3-light-grey">
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">11+</span><br>
-        Partners
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">55+</span><br>
-        Projects Done
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">89+</span><br>
-        Happy Clients
-      </div>
-      <div class="w3-quarter w3-section">
-        <span class="w3-xlarge">150+</span><br>
-        Meetings
-      </div>
-    </div> -->
+            <ul>
 
-    <!-- <button class="w3-button w3-light-grey w3-padding-large w3-section">
-      <i class="fa fa-download"></i> Download Resume
-    </button> -->
-    <a href="resume/shiv-modi-resume.pdf" target="_blank"
-      class="w3-button w3-light-grey w3-padding-large w3-section">
-      <i class="fa fa-download"></i> Download Resume
-    </a>
+                <li><a href="#about">About</a></li>
 
-    
-    <div class="w3-container w3-card w3-black w3-margin-bottom">
-      <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Work Experience</h2>
-      <div class="w3-container">
-        <h5 class="w3-opacity"><b>Front End Developer / w3schools.com</b></h5>
-        <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jan 2015 - <span class="w3-tag w3-teal w3-round">Current</span></h6>
-        <p>Lorem ipsum dolor sit amet. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-        <hr>
-      </div>
-      <div class="w3-container">
-        <h5 class="w3-opacity"><b>Web Developer / something.com</b></h5>
-        <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Mar 2012 - Dec 2014</h6>
-        <p>Consectetur adipisicing elit. Praesentium magnam consectetur vel in deserunt aspernatur est reprehenderit sunt hic. Nulla tempora soluta ea et odio, unde doloremque repellendus iure, iste.</p>
-        <hr>
-      </div>
-      <div class="w3-container">
-        <h5 class="w3-opacity"><b>Graphic Designer / designsomething.com</b></h5>
-        <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Jun 2010 - Mar 2012</h6>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p><br>
-      </div>
-    </div>
+                <li><a href="#projects">Projects</a></li>
 
-    <div class="w3-container w3-card w3-black">
-      <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-certificate fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Education</h2>
-      <div class="w3-container">
-        <h5 class="w3-opacity"><b>W3Schools.com</b></h5>
-        <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Forever</h6>
-        <p>Web Development! All I need to know in one place</p>
-        <hr>
-      </div>
-      <div class="w3-container">
-        <h5 class="w3-opacity"><b>London Business School</b></h5>
-        <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2013 - 2015</h6>
-        <p>Master Degree</p>
-        <hr>
-      </div>
-      <div class="w3-container">
-        <h5 class="w3-opacity"><b>School of Coding</b></h5>
-        <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>2010 - 2013</h6>
-        <p>Bachelor Degree</p><br>
-      </div>
-    </div>
+                <li><a href="#skills">Skills</a></li>
 
-  </div>
-  <!-- End About Section -->
+                <li><a href="#experience">Experience</a></li>
+
+                <li><a href="#education">Education</a></li>
+
+                <li><a href="#contact">Contact</a></li>
+
+            </ul>
+
+        </nav>
+
+    </header>
+
+
+
+    <main>
+
+        <!-- ================= HERO ================= -->
+
+        <section id="hero">
+
+            <img src="images/self.jpg" alt="Shiv Modi">
+
+            <h1>Shiv Modi</h1>
+
+            <h2>Software Engineer</h2>
+
+            <p>
+                Building scalable software systems and intelligent machine learning
+                solutions.
+            </p>
+
+            <div>
+
+                <a href="resume/shiv-modi-resume.pdf" target="_blank">
+                    Resume
+                </a>
+
+                <a href="https://github.com/shivmodi21" target="_blank">
+                    GitHub
+                </a>
+
+                <a href="https://www.linkedin.com/in/shivmodi210/" target="_blank">
+                    LinkedIn
+                </a>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= ABOUT ================= -->
+
+        <section id="about">
+
+            <h2>About Me</h2>
+
+            <p>
+
+                I'm a Software Engineer with a strong interest in backend engineering,
+                algorithms, and applied machine learning.
+
+                I enjoy designing systems, solving challenging programming problems,
+                and building applications that combine solid engineering principles
+                with practical AI solutions.
+
+            </p>
+
+        </section>
+
+
+
+        <!-- ================= FEATURED PROJECTS ================= -->
+
+        <section id="projects">
+
+            <h2>Featured Projects</h2>
+
+            <!-- Project cards will go here -->
+
+        </section>
+
+
+
+        <!-- ================= SKILLS ================= -->
+
+        <section id="skills">
+
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <h3>Languages</h3>
+                    <p>
+                        C++ • Python • JavaScript • SQL
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Backend</h3>
+                    <p>
+                        REST APIs • Node.js • Express
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Machine Learning</h3>
+                    <p>
+                        PyTorch • Scikit-learn • NumPy • Pandas
+                    </p>
+                </div>
+
+                <div class="skill-card">
+                    <h3>Developer Tools</h3>
+                    <p>
+                        Git • Docker • Linux • MATLAB
+                    </p>
+                </div>
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= EXPERIENCE ================= -->
+
+        <section id="experience">
+
+            <h2>Experience</h2>
+
+            <article class="experience-card">
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <h3>Software Engineer <span class="current-role">Current</span></h3>
+
+                        <h4>Spectral Insights Pvt. Ltd.</h4>
+
+                    </div>
+
+                    <span>Jul 2024 - Present</span>
+
+                </div>
+
+                <p>
+
+                    Working on software powering AI-driven digital pathology scanners,
+                    focusing on image processing, computer vision, and scan optimization
+                    for whole-slide imaging systems.
+
+                </p>
+
+                <ul>
+
+                    <li>Designed camera quality assurance algorithms for defect detection.</li>
+
+                    <li>Developed overlap correction pipeline for haze-free image stitching.</li>
+
+                    <li>Optimized Z-stack acquisition, reducing scan time by 3.25%.</li>
+
+                    <li>Reduced unnecessary rescans by 68.9% through smarter focus analysis.</li>
+
+                </ul>
+
+                <div class="tech-stack">
+                    <span>C++</span>
+                    <span>Python</span>
+                    <span>SQL</span>
+                    <span>System Algorithms</span>
+                </div>
+
+            </article>
+
+            <article class="experience-card">
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <h3>Data Analytics Intern</h3>
+
+                        <h4>MedTourEasy</h4>
+
+                    </div>
+
+                    <span>May 2023</span>
+
+                </div>
+
+                <p>
+
+                    Developed predictive machine learning models for blood donation
+                    analysis using feature engineering and automated model selection.
+
+                </p>
+
+                <ul>
+
+                    <li>Built Logistic Regression based prediction pipeline.</li>
+
+                    <li>Improved AUC by 3.37% using feature normalization.</li>
+
+                    <li>Applied TPOT for automated model optimization.</li>
+
+                </ul>
+
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Data Analysis</span>
+                    <span>Statistical ML</span>
+                </div>
+
+            </article>
+
+            <article class="experience-card">
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <h3>Research & Development Intern</h3>
+
+                        <h4>Coulomb AI (YC S21)</h4>
+
+                    </div>
+
+                    <span>May 2022 - Jul 2022</span>
+
+                </div>
+
+                <p>
+
+                    Conducted battery analytics and performance evaluation for electric
+                    vehicle battery systems using experimental datasets covering multiple
+                    lithium-ion chemistries.
+
+                </p>
+
+                <ul>
+
+                    <li>Analyzed LFP, NMC, and NCA battery performance under varying operating conditions.</li>
+
+                    <li>Computed battery health metrics including SOC, SOH, efficiency, and thermal characteristics.</li>
+
+                    <li>Created visualizations to compare degradation trends and support battery modeling improvements.</li>
+
+                    <li>Contributed to battery technology research through literature review and performance analysis.</li>
+
+                </ul>
+
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Data Analysis</span>
+                    <span>Battery Analytics</span>
+                    <span>Visualization</span>
+                </div>
+
+            </article>
+
+            <article class="experience-card">
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <h3>Technical Intern</h3>
+
+                        <h4>Wings EV</h4>
+
+                    </div>
+
+                    <span>Dec 2021 - Jan 2022</span>
+
+                </div>
+
+                <p>
+
+                    Developed embedded software for Raspberry Pi-based CAN bus systems
+                    used in electric vehicles.
+
+                </p>
+
+                <ul>
+
+                    <li>Built C++ library for processing CAN messages.</li>
+
+                    <li>Implemented real-time audio notification system.</li>
+
+                </ul>
+
+                <div class="tech-stack">
+                    <span>C++</span>
+                    <span>Raspberry Pi</span>
+                    <span>CAN Bus</span>
+                </div>
+
+            </article>
+
+            <article class="experience-card">
+
+                <div class="experience-header">
+
+                    <div>
+
+                        <h3>Data Science Intern</h3>
+
+                        <h4>Sahu Technologies</h4>
+
+                    </div>
+
+                    <span>Jan 2021 - Feb 2021</span>
+
+                </div>
+
+                <p>
+
+                    Developed a deep learning solution for automated brain tumor detection
+                    from MRI images using convolutional neural networks.
+
+                </p>
+
+                <ul>
+
+                    <li>Designed and trained a CNN model in Keras for MRI image classification.</li>
+
+                    <li>Applied OpenCV-based preprocessing, cropping, grayscale conversion, and augmentation.</li>
+
+                    <li>Achieved 97% classification accuracy on the processed dataset.</li>
+
+                    <li>Received Certificate of Appreciation and Subject Matter Expert Certificate.</li>
+
+                </ul>
+
+                <div class="tech-stack">
+                    <span>Python</span>
+                    <span>Keras</span>
+                    <span>OpenCV</span>
+                    <span>CNN</span>
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- ================= EDUCATION ================= -->
+
+        <section id="education">
+
+            <h2>Education</h2>
+
+            <div class="education-card">
+
+                <div class="education-header">
+
+                    <div>
+                        <h3>Indian Institute of Technology Bombay</h3>
+
+                        <p class="education-degree">
+                            Dual Degree (B.Tech + M.Tech)
+                        </p>
+
+                        <p>
+                            Mechanical Engineering with Specialization in Computer Integrated Manufacturing
+                        </p>
+
+                        <p>
+                            Minor in Industrial Engineering & Operations Research
+                        </p>
+                    </div>
+
+                    <span class="education-date">
+                        2019 - 2024
+                    </span>
+
+                </div>
+
+                <p class="education-grade">
+                    CPI: <strong>8.60 / 10.00</strong>
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- ================= CONTACT ================= -->
+
+        <section id="contact">
+
+            <h2>Contact</h2>
+
+            <div class="contact-card">
+
+                <div class="contact-item">
+                    <i class="fa-solid fa-envelope"></i>
+
+                    <div>
+                        <h3>Email</h3>
+                        <a href="mailto:modishiv210@gmail.com">
+                            modishiv210@gmail.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-brands fa-linkedin"></i>
+
+                    <div>
+                        <h3>LinkedIn</h3>
+                        <a href="https://linkedin.com/in/shivmodi210" target="_blank">
+                            linkedin.com/in/shivmodi210
+                        </a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <i class="fa-brands fa-github"></i>
+
+                    <div>
+                        <h3>GitHub</h3>
+                        <a href="https://github.com/shivmodi21" target="_blank">
+                            github.com/shivmodi21
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="contact-buttons">
+
+                <a href="mailto:modishiv210@gmail.com" class="primary-btn">
+                    Email Me
+                </a>
+
+                <a href="resume/shiv-modi-resume.pdf"
+                  target="_blank"
+                  class="secondary-btn">
+                    Download Resume
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+        <p>
+            © <span id="year"></span> Shiv Modi
+        </p>
+    </footer>
+    <button id="backToTop">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
   
-  <!-- Portfolio Section -->
-  <div class="w3-padding-64 w3-content" id="projects">
-    <h2 class="w3-text-light-grey">My Projects</h2>
-    <hr style="width:200px" class="w3-opacity">
-
-    <!-- Grid for photos -->
-    <!-- First Photo Grid-->
-    <div class="w3-row-padding">
-      <div class="w3-third w3-container w3-margin-bottom">
-        <img src="images/brain.avif" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Brain Tumor Detection</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-      </div>
-      <div class="w3-third w3-container w3-margin-bottom">
-        <img src="images/line.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Line Follower</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-      </div>
-      <div class="w3-third w3-container">
-        <img src="images/loan.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Loan Approval</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Second Photo Grid-->
-    <div class="w3-row-padding">
-      <div class="w3-third w3-container w3-margin-bottom">
-        <img src="images/moon.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Virtual Moon Lander</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-      </div>
-      <div class="w3-third w3-container w3-margin-bottom">
-        <img src="images/pendulum.png" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Inverted Pendulum</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-      </div>
-      <div class="w3-third w3-container">
-        <img src="images/ser.jpg" alt="Norway" style="width:100%" class="w3-hover-opacity">
-        <div class="w3-container w3-white">
-          <p><b>Speech Emotion Recognition</b></p>
-          <p>Praesent tincidunt sed tellus ut rutrum. Sed vitae justo condimentum, porta lectus vitae, ultricies congue gravida diam non fringilla.</p>
-        </div>
-      </div>
-    </div>
-    <!-- End photo grid -->
-  <!-- End Portfolio Section -->
-  </div>
-
-  <!-- Contact Section -->
-  <div class="w3-padding-64 w3-content w3-text-grey" id="contact">
-    <h2 class="w3-text-light-grey">Contact Me</h2>
-    <hr style="width:200px" class="w3-opacity">
-
-    <div class="w3-section">
-      <p><i class="fa fa-map-marker fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Mumbai, India</p>
-      <p><i class="fa fa-phone fa-fw w3-text-white w3-xxlarge w3-margin-right"></i> Phone: +91 8469402099</p>
-      <p><i class="fa fa-envelope fa-fw w3-text-white w3-xxlarge w3-margin-right"> </i> Email: modishiv210@gmail.com</p>
-    </div><br>
-    <p>Let's get in touch. Send me a message:</p>
-
-    <form action="/action_page.php" target="_blank">
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Name" required name="Name"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Email" required name="Email"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Subject" required name="Subject"></p>
-      <p><input class="w3-input w3-padding-16" type="text" placeholder="Message" required name="Message"></p>
-      <p>
-        <button class="w3-button w3-light-grey w3-padding-large" type="submit">
-          <i class="fa fa-paper-plane"></i>SEND MESSAGE
-        </button>
-      </p>
-    </form>
-  <!-- End Contact Section -->
-  </div>
-  
-<!-- Footer. This section contains an ad for W3Schools Spaces. You can leave it to support us. -->
-<footer class="w3-content w3-padding-64 w3-text-grey w3-xlarge">
-  <a href="https://github.com/modishiv210/"><i class="fa fa-github w3-hover-opacity"></i></a>
-  <a href="https://www.linkedin.com/in/shivmodi210/"><i class="fa fa-linkedin w3-hover-opacity"></i></a>
-  <!-- <a href="https://www.credly.com/users/shivmodi210/badges"><i class="fa fa-square-c w3-hover-opacity"></i></a> -->
-  <a href="https://medium.com/@shivmodi21"><i class="fa fa-medium w3-hover-opacity"></i></a>
-  <a href="https://twitter.com/ShivModi21"><i class="fa fa-twitter w3-hover-opacity"></i></a>
-  
- <p class="w3-small">&copy; All Rights Reserved. Made with W3Schools</p>
- <!-- End footer -->
-</footer>
-
-<!-- END PAGE CONTENT -->
-</div>
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
+
 </html>
