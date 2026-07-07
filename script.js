@@ -1,126 +1,71 @@
 // ===============================
 // Footer Year
 // ===============================
-
 document.getElementById("year").textContent = new Date().getFullYear();
 
-
 // ===============================
-// Navbar Shadow on Scroll
+// DOM Elements
 // ===============================
-
 const header = document.querySelector("header");
-
-window.addEventListener("scroll", () => {
-
-    if(window.scrollY > 20){
-
-        header.classList.add("scrolled");
-
-    }else{
-
-        header.classList.remove("scrolled");
-
-    }
-
-});
-
-
-// ===============================
-// Active Navigation Link
-// ===============================
-
 const sections = document.querySelectorAll("section");
 const navLinks = document.querySelectorAll("nav a");
+const backBtn = document.getElementById("backToTop");
 
+// ===============================
+// Scroll Events
+// ===============================
 window.addEventListener("scroll", () => {
+    // Navbar Shadow
+    header.classList.toggle("scrolled", window.scrollY > 20);
 
+    // Active Navigation Link
     let current = "";
 
     sections.forEach(section => {
-
         const sectionTop = section.offsetTop - 120;
-
-        if(window.scrollY >= sectionTop){
-
-            current = section.getAttribute("id");
-
+        if (window.scrollY >= sectionTop) {
+            current = section.id;
         }
-
     });
 
     navLinks.forEach(link => {
-
-        link.classList.remove("active");
-
-        if(link.getAttribute("href") === "#" + current){
-
-            link.classList.add("active");
-
-        }
-
+        link.classList.toggle(
+            "active",
+            link.getAttribute("href") === `#${current}`
+        );
     });
 
+    // Back To Top Button
+    backBtn.classList.toggle("show", window.scrollY > 400);
 });
-
 
 // ===============================
 // Fade In Sections
 // ===============================
-
-const observer = new IntersectionObserver((entries)=>{
-
-    entries.forEach(entry=>{
-
-        if(entry.isIntersecting){
-
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
             entry.target.classList.add("show");
-
+            observer.unobserve(entry.target);
         }
-
     });
 
-},{
-    threshold:0.15
+}, {
+    threshold: 0.15
 });
 
-sections.forEach(section=>{
-
+sections.forEach(section => {
     section.classList.add("hidden");
-
     observer.observe(section);
-
 });
 
 
 // ===============================
-// Back To Top Button
+// Back To Top
 // ===============================
-
-const backBtn = document.getElementById("backToTop");
-
-window.addEventListener("scroll",()=>{
-
-    if(window.scrollY > 400){
-
-        backBtn.style.display="block";
-
-    }else{
-
-        backBtn.style.display="none";
-
-    }
-
-});
-
-backBtn.addEventListener("click",()=>{
-
+backBtn.addEventListener("click", () => {
     window.scrollTo({
-
-        top:0,
-
-        behavior:"smooth"
-
+        top: 0,
+        behavior: "smooth"
     });
-
 });
