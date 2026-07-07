@@ -69,3 +69,123 @@ backBtn.addEventListener("click", () => {
         behavior: "smooth"
     });
 });
+
+// ===============================
+// Projects Carousel
+// ===============================
+
+const track = document.querySelector(".projects-track");
+const cards = document.querySelectorAll(".project-card");
+
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
+
+const indicatorContainer = document.querySelector(".project-indicator");
+
+let currentIndex = 0;
+
+function getVisibleCards(){
+
+    if(window.innerWidth <= 768) return 1;
+
+    if(window.innerWidth <= 992) return 2;
+
+    return 3;
+
+}
+
+function createIndicators(){
+
+    indicatorContainer.innerHTML = "";
+
+    cards.forEach((_, index) => {
+
+        const dot = document.createElement("span");
+
+        if(index === 0){
+            dot.classList.add("active");
+        }
+
+        dot.addEventListener("click", () => {
+
+            currentIndex = index;
+
+            const maxIndex = cards.length - visibleCards;
+
+            if(currentIndex > maxIndex){
+                currentIndex = maxIndex;
+            }
+
+            updateCarousel();
+
+        });
+
+        indicatorContainer.appendChild(dot);
+
+    });
+
+}
+
+createIndicators();
+
+function updateCarousel(){
+
+    const cardWidth = cards[0].offsetWidth;
+    const gap = 24;
+
+    track.style.transform =
+        `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+
+    const indicators = indicatorContainer.querySelectorAll("span");
+
+    indicators.forEach(dot=>{
+        dot.classList.remove("active");
+    });
+
+    indicators[currentIndex].classList.add("active");
+
+    prevBtn.disabled = currentIndex === 0;
+
+    nextBtn.disabled = currentIndex >= cards.length - visibleCards;
+
+}
+
+const visibleCards = getVisibleCards();
+
+window.addEventListener("resize",()=>{
+
+    visibleCards = getVisibleCards();
+
+    const maxIndex = cards.length - visibleCards;
+
+    if(currentIndex > maxIndex){
+        currentIndex = maxIndex;
+    }
+
+    updateCarousel();
+
+});
+
+nextBtn.addEventListener("click",()=>{
+
+    if(currentIndex < cards.length - visibleCards){
+
+        currentIndex++;
+
+        updateCarousel();
+
+    }
+
+});
+
+prevBtn.addEventListener("click",()=>{
+
+    if(currentIndex > 0){
+
+        currentIndex--;
+
+        updateCarousel();
+
+    }
+
+});
