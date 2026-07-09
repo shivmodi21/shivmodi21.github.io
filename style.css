@@ -505,21 +505,19 @@ nav a.active::after{
 .projects-viewport{
     flex:1;
     overflow:hidden;
-    padding:0 16px;
+    padding:16px 0;
 }
 
 .projects-track{
     display:flex;
     gap:24px;
-    padding:24px;
     transition:transform .45s ease;
-    align-items:stretch;
 }
 
 /* Card */
 
 .project-card{
-    flex:0 0 calc((100% - 48px - 32px)/3);
+    flex:0 0 60%;
     padding:28px;
     background:var(--card);
     border:1px solid var(--border);

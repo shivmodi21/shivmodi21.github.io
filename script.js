@@ -76,6 +76,7 @@ backBtn.addEventListener("click", () => {
 
 const track = document.querySelector(".projects-track");
 const cards = document.querySelectorAll(".project-card");
+const viewport = document.querySelector(".projects-viewport");
 
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
@@ -84,15 +85,10 @@ const indicatorContainer = document.querySelector(".project-indicator");
 
 let currentIndex = 0;
 
-function getVisibleCards(){
 
-    if(window.innerWidth <= 768) return 1;
-
-    if(window.innerWidth <= 992) return 2;
-
-    return 3;
-
-}
+// ===============================
+// Create Indicators
+// ===============================
 
 function createIndicators(){
 
@@ -109,13 +105,6 @@ function createIndicators(){
         dot.addEventListener("click", () => {
 
             currentIndex = index;
-
-            const maxIndex = cards.length - visibleCards;
-
-            if(currentIndex > maxIndex){
-                currentIndex = maxIndex;
-            }
-
             updateCarousel();
 
         });
@@ -126,66 +115,105 @@ function createIndicators(){
 
 }
 
-createIndicators();
 
-function updateCarousel(){
+// ===============================
+// Set Carousel Side Padding
+// ===============================
 
-    const cardWidth = cards[0].offsetWidth;
-    const gap = 24;
+function setCarouselPadding(){
 
-    track.style.transform =
-        `translateX(-${currentIndex * (cardWidth + gap)}px)`;
+    const viewportWidth = viewport.clientWidth;
+    const cardWidth = cards[0].getBoundingClientRect().width;
 
-    const indicators = indicatorContainer.querySelectorAll("span");
+    const sidePadding = (viewportWidth - cardWidth) / 2;
 
-    indicators.forEach(dot=>{
-        dot.classList.remove("active");
-    });
-
-    indicators[currentIndex].classList.add("active");
-
-    prevBtn.disabled = currentIndex === 0;
-
-    nextBtn.disabled = currentIndex >= cards.length - visibleCards;
+    track.style.paddingLeft = `${sidePadding}px`;
+    track.style.paddingRight = `${sidePadding}px`;
 
 }
 
-const visibleCards = getVisibleCards();
 
-window.addEventListener("resize",()=>{
+// ===============================
+// Update Carousel
+// ===============================
 
-    visibleCards = getVisibleCards();
+function updateCarousel(){
 
-    const maxIndex = cards.length - visibleCards;
+    const cardWidth = cards[0].getBoundingClientRect().width;
 
-    if(currentIndex > maxIndex){
-        currentIndex = maxIndex;
-    }
+    const trackStyles = window.getComputedStyle(track);
+    const gap = parseFloat(trackStyles.gap) || 0;
 
-    updateCarousel();
+    const moveAmount = currentIndex * (cardWidth + gap);
 
-});
+    track.style.transform = `translateX(-${moveAmount}px)`;
 
-nextBtn.addEventListener("click",()=>{
+    // Update active indicator
 
-    if(currentIndex < cards.length - visibleCards){
+    const indicators =
+        indicatorContainer.querySelectorAll("span");
+
+    indicators.forEach((dot, index) => {
+
+        dot.classList.toggle(
+            "active",
+            index === currentIndex
+        );
+
+    });
+
+    // Disable buttons at boundaries
+
+    prevBtn.disabled = currentIndex === 0;
+    nextBtn.disabled = currentIndex === cards.length - 1;
+
+}
+
+
+// ===============================
+// Navigation Buttons
+// ===============================
+
+nextBtn.addEventListener("click", () => {
+
+    if(currentIndex < cards.length - 1){
 
         currentIndex++;
-
         updateCarousel();
 
     }
 
 });
 
-prevBtn.addEventListener("click",()=>{
+
+prevBtn.addEventListener("click", () => {
 
     if(currentIndex > 0){
 
         currentIndex--;
-
         updateCarousel();
 
     }
 
 });
+
+
+// ===============================
+// Handle Resize
+// ===============================
+
+window.addEventListener("resize", () => {
+
+    setCarouselPadding();
+    updateCarousel();
+
+});
+
+
+// ===============================
+// Initialize Carousel
+// ===============================
+
+createIndicators();
+setCarouselPadding();
+updateCarousel();
