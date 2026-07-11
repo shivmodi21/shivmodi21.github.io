@@ -29,12 +29,23 @@
     <header>
         <nav>
             <h2>Shiv Modi</h2>
-            <ul>
+
+            <button
+                class="menu-toggle"
+                aria-label="Toggle navigation menu"
+                aria-expanded="false"
+            >
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#experience">Experience</a></li>
                 <li><a href="#education">Education</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Certifications</a></li>
+                <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
@@ -145,7 +156,7 @@
             <article class="experience-card">
                 <div class="experience-header">
                     <div>
-                        <h3>Software Engineer <span class="current-role">Current</span></h3>
+                        <h3>Software Engineer</h3>
                         <h4>Spectral Insights Pvt. Ltd.</h4>
                     </div>
 
@@ -299,7 +310,7 @@
 
         <section id="education">
             <h2>Education</h2>
-            <div class="education-card">
+            <article class="education-card">
                 <div class="education-header">
                     <div>
                         <h3>Indian Institute of Technology Bombay</h3>
@@ -324,7 +335,7 @@
                 <p class="education-grade">
                     CPI: <strong>8.60 / 10.00</strong>
                 </p>
-            </div>
+            </article>
 
         </section>
 
@@ -432,6 +443,416 @@
             </div>
         </section>
 
+        <!-- ========= AWARDS & CERTIFICATIONS =============== -->
+
+        <section id="achievements">
+            <h2>Awards & Certifications</h2>
+
+            <h3 class="achievements-subtitle">Awards</h3>
+
+            <div class="awards">
+                <div class="award-card">
+
+                    <!-- Award Icon -->
+                    <div class="award-icon">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+
+                    <!-- Award Content -->
+                    <div class="award-content">
+
+                        <span class="award-year">2021</span>
+
+                        <h3>Young Researchers' Prize</h3>
+
+                        <p class="award-organization">
+                            IEEE Oceanic Engineering Society
+                        </p>
+
+                        <p class="award-description">
+                            Awarded as a member of AUV-IITB by the University
+                            of Tokyo, Japan, recognizing innovative research
+                            and engineering contributions to autonomous
+                            underwater vehicle technology.
+                        </p>
+                    </div>
+
+                    <!-- Award Image -->
+                    <div class="award-image">
+                        <img src="awards/IEEE.jpg"
+                            alt="Young Researchers' Prize Award">
+                    </div>
+                </div>
+            </div>
+
+            <h3 class="achievements-subtitle">Certifications</h3>
+
+            <div class="certifications">
+
+                <div class="cert-cards">
+                <!-- Certification 1 -->
+                    <div class="cert-card">
+
+                        <div class="cert-header">
+
+                            <div class="cert-logo">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+
+                            <div class="cert-info">
+                                <h3>IBM Data Science Professional Certificate</h3>
+                                <p>IBM</p>
+                            </div>
+
+                            <button class="cert-toggle"
+                                    type="button"
+                                    aria-label="Expand certification details"
+                                    aria-expanded="false">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="cert-details">
+
+                            <p class="cert-skills">
+                                <strong>Skills:</strong>
+                                Python · SQL · Machine Learning · Data Analysis
+                            </p>
+
+                            <p class="cert-description">
+                                Completed professional training in data science,
+                                data analysis and Python-based data workflows.
+                            </p>
+
+                            <a href="#"
+                            class="cert-link"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                                View Credential
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Certification 2 -->
+                    <div class="cert-card">
+
+                        <div class="cert-header">
+
+                            <div class="cert-logo">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+
+                            <div class="cert-info">
+                                <h3>Certification Name</h3>
+                                <p>Issuing Organization</p>
+                            </div>
+
+                            <button class="cert-toggle"
+                                    type="button"
+                                    aria-label="Expand certification details"
+                                    aria-expanded="false">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="cert-details">
+
+                            <p class="cert-skills">
+                                <strong>Skills:</strong>
+                                Skill 1 · Skill 2 · Skill 3
+                            </p>
+
+                            <p class="cert-description">
+                                Add a short description of what you learned or
+                                accomplished through this certification.
+                            </p>
+
+                            <a href="#"
+                            class="cert-link"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                                View Credential
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Certification 3 -->
+                    <div class="cert-card">
+
+                        <div class="cert-header">
+
+                            <div class="cert-logo">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+
+                            <div class="cert-info">
+                                <h3>Certification Name</h3>
+                                <p>Issuing Organization</p>
+                            </div>
+
+                            <button class="cert-toggle"
+                                    type="button"
+                                    aria-label="Expand certification details"
+                                    aria-expanded="false">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="cert-details">
+
+                            <p class="cert-skills">
+                                <strong>Skills:</strong>
+                                Skill 1 · Skill 2 · Skill 3
+                            </p>
+
+                            <p class="cert-description">
+                                Add a short description of what you learned or
+                                accomplished through this certification.
+                            </p>
+
+                            <a href="#"
+                            class="cert-link"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                                View Credential
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Certification 4 -->
+                    <div class="cert-card">
+
+                        <div class="cert-header">
+
+                            <div class="cert-logo">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+
+                            <div class="cert-info">
+                                <h3>Certification Name</h3>
+                                <p>Issuing Organization</p>
+                            </div>
+
+                            <button class="cert-toggle"
+                                    type="button"
+                                    aria-label="Expand certification details"
+                                    aria-expanded="false">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="cert-details">
+
+                            <p class="cert-skills">
+                                <strong>Skills:</strong>
+                                Skill 1 · Skill 2 · Skill 3
+                            </p>
+
+                            <p class="cert-description">
+                                Add a short description of what you learned or
+                                accomplished through this certification.
+                            </p>
+
+                            <a href="#"
+                            class="cert-link"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                                View Credential
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ===========================
+            PUBLICATIONS
+        =========================== -->
+
+        <section id="publications">
+
+            <h2>Publications</h2>
+
+            <div class="publications-container">
+
+                <!-- Master's Thesis -->
+                <article class="publication-card featured-publication">
+
+                    <div class="publication-icon">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+
+                    <div class="publication-content">
+
+                        <div class="publication-meta">
+                            <span class="publication-badge">Master's Thesis</span>
+                            <span class="publication-year">2024</span>
+                        </div>
+
+                        <h3>
+                            AI Classifier for Wear and Lubrication State Identification
+                        </h3>
+
+                        <p class="publication-venue">
+                            Indian Institute of Technology Bombay · 2024
+                        </p>
+
+                        <p class="publication-description">
+                            Developed a multi-sensor machine learning framework for automated
+                            lubrication condition monitoring and friction prediction using
+                            vibration data from a pin-on-disc tribometer. Classified full,
+                            half, and no-lubrication states under varying operating conditions.
+                        </p>
+
+                    </div>
+
+                </article>
+
+                <!-- Publication 1 -->
+                <article class="publication-card featured-publication">
+
+                    <div class="publication-icon">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+
+                    <div class="publication-content">
+
+                        <div class="publication-meta">
+                            <span class="publication-badge">IEEE</span>
+                            <span class="publication-year">2022</span>
+                        </div>
+
+                        <h3>
+                            Design of Battery Management System for an
+                            Autonomous Underwater Vehicle
+                        </h3>
+
+                        <p class="publication-venue">
+                            IEEE · May 19, 2022
+                        </p>
+
+                        <p class="publication-description">
+                            Developed a battery management system for an autonomous
+                            underwater vehicle with advanced protection features using
+                            BQ76952, ATmega328P, and LTC4421 ICs. Implemented a rapid
+                            battery-switching mechanism achieving a 45 μs transition
+                            without interrupting the electrical system.
+                        </p>
+
+                        <a
+                            href="https://ieeexplore.ieee.org/document/9775282"
+                            class="publication-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            View Publication
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Publication 2 -->
+                <article class="publication-card">
+
+                    <div class="publication-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div class="publication-content">
+
+                        <div class="publication-meta">
+                            <span class="publication-badge">Technical Report</span>
+                            <span class="publication-year">2021</span>
+                        </div>
+
+                        <h3>
+                            Technical Design Report of Matsya 6A,
+                            Autonomous Underwater Vehicle
+                        </h3>
+
+                        <p class="publication-venue">
+                            RoboNation · August 5, 2021
+                        </p>
+
+                        <a
+                            href="https://robonation.org/app/uploads/sites/4/2021/07/RoboSub_2021_Indian-Inst-of-Tech-Bombay_TDR.pdf"
+                            class="publication-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fa-solid fa-file-pdf"></i>
+                            View Report
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- Publication 3 -->
+                <article class="publication-card">
+
+                    <div class="publication-icon">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+
+                    <div class="publication-content">
+
+                        <div class="publication-meta">
+                            <span class="publication-badge">Technical Report</span>
+                            <span class="publication-year">2020</span>
+                        </div>
+
+                        <h3>
+                            Technical Design Report of Matsya 6,
+                            Autonomous Underwater Vehicle
+                        </h3>
+
+                        <p class="publication-venue">
+                            RoboNation · August 5, 2020
+                        </p>
+
+                        <a
+                            href="https://robonation.org/app/uploads/sites/4/2020/08/RS20_TDR_IIT-Bombay.pdf"
+                            class="publication-link"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            <i class="fa-solid fa-file-pdf"></i>
+                            View Report
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+        </section>
+
         <!-- ================= CONTACT ================= -->
 
         <section id="contact">
@@ -482,8 +903,6 @@
                         Download Resume
                 </a>
             </div>
-
-            
         </section>
 
     </main>

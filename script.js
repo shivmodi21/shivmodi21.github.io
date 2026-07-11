@@ -8,7 +8,10 @@ document.getElementById("year").textContent = new Date().getFullYear();
 // ===============================
 const header = document.querySelector("header");
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
+const navLinks = document.querySelectorAll("nav ul a");
+const navMenu = document.querySelector("nav ul");
+const menuToggle = document.querySelector(".menu-toggle");
+const menuIcon = menuToggle.querySelector("i");
 const backBtn = document.getElementById("backToTop");
 
 // ===============================
@@ -37,6 +40,38 @@ window.addEventListener("scroll", () => {
 
     // Back To Top Button
     backBtn.classList.toggle("show", window.scrollY > 400);
+});
+
+
+// ===============================
+// Mobile Navigation
+// ===============================
+menuToggle.addEventListener("click", () => {
+
+    navMenu.classList.toggle("open");
+
+    const isOpen = navMenu.classList.contains("open");
+
+    menuToggle.setAttribute("aria-expanded", isOpen);
+
+    menuIcon.classList.toggle("fa-bars", !isOpen);
+    menuIcon.classList.toggle("fa-xmark", isOpen);
+});
+
+
+// Close mobile menu when a navigation link is clicked
+navLinks.forEach(link => {
+
+    link.addEventListener("click", () => {
+
+        navMenu.classList.remove("open");
+
+        menuToggle.setAttribute("aria-expanded", "false");
+
+        menuIcon.classList.add("fa-bars");
+        menuIcon.classList.remove("fa-xmark");
+    });
+
 });
 
 // ===============================
@@ -217,3 +252,87 @@ window.addEventListener("resize", () => {
 createIndicators();
 setCarouselPadding();
 updateCarousel();
+
+// ===============================
+// Mobile Swipe Navigation
+// ===============================
+
+let touchStartX = 0;
+let touchStartY = 0;
+
+const swipeThreshold = 50;
+
+viewport.addEventListener("touchstart", (event) => {
+
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+
+}, { passive: true });
+
+
+viewport.addEventListener("touchend", (event) => {
+
+    const touchEndX = event.changedTouches[0].clientX;
+    const touchEndY = event.changedTouches[0].clientY;
+
+    const deltaX = touchEndX - touchStartX;
+    const deltaY = touchEndY - touchStartY;
+
+
+    // Ignore primarily vertical gestures
+    if(Math.abs(deltaY) > Math.abs(deltaX)){
+        return;
+    }
+
+
+    // Swipe left → next project
+    if(deltaX < -swipeThreshold){
+
+        if(currentIndex < cards.length - 1){
+            currentIndex++;
+            updateCarousel();
+        }
+
+    }
+
+
+    // Swipe right → previous project
+    else if(deltaX > swipeThreshold){
+
+        if(currentIndex > 0){
+            currentIndex--;
+            updateCarousel();
+        }
+
+    }
+
+}, { passive: true });
+
+// ===============================
+// Achievements Accordion
+// ===============================
+
+const certCards = document.querySelectorAll(".cert-card");
+
+certCards.forEach((card) => {
+
+    const header = card.querySelector(".cert-header");
+
+    header.addEventListener("click", () => {
+
+        // Remember whether the clicked card is already active
+        const isActive = card.classList.contains("active");
+
+        // Close all cards
+        certCards.forEach((otherCard) => {
+            otherCard.classList.remove("active");
+        });
+
+        // Open clicked card only if it was previously closed
+        if (!isActive) {
+            card.classList.add("active");
+        }
+
+    });
+
+});
