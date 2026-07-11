@@ -654,7 +654,7 @@ nav a.active::after{
     position: relative;
 
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 24px;
 
     padding: 32px;
@@ -736,6 +736,12 @@ nav a.active::after{
     background: rgba(210, 153, 34, 0.16);
 }
 
+.award-meta {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+}
 
 /* Award Content */
 
@@ -746,8 +752,6 @@ nav a.active::after{
 
 .award-year {
     display: inline-block;
-
-    margin-bottom: 8px;
     padding: 4px 10px;
 
     background: rgba(210, 153, 34, 0.1);
@@ -787,18 +791,16 @@ nav a.active::after{
 
 .award-image {
     flex-shrink: 0;
-
-    width: 260px;
-    height: 180px;
+    align-self: stretch;
+    width: 320px;
 }
 
 .award-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     display: block;
-    object-fit: cover;
 }
 
 /* ===========================
@@ -1447,6 +1449,7 @@ footer p{
     }
 
     .skills-grid{
+        grid-template-columns:1fr;
         gap:16px;
     }
 
@@ -1454,25 +1457,69 @@ footer p{
         font-size:1.2rem;
     }
 
+    /* Awards */
+
     .award-card {
-        flex-wrap: wrap;
+        display: grid;
+
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "icon content"
+            "image image";
+
+        align-items: start;
+        gap: 20px 16px;
+
+        padding: 20px;
+    }
+
+    .award-icon {
+        grid-area: icon;
+
+        width: 70px;
+        height: 70px;
+
+        font-size: 1.9rem;
     }
 
     .award-content {
-        flex: 1;
-        min-width: 0;
+        grid-area: content;
+    }
+
+    .award-meta {
+        margin-bottom: 10px;
+    }
+
+    .award-content h3 {
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    .award-organization {
+        margin-bottom: 12px;
+
+        font-size: 0.9rem;
+    }
+
+    .award-description {
+        font-size: 0.88rem;
+        line-height: 1.6;
     }
 
     .award-image {
+        grid-area: image;
+
         width: 100%;
-        display: flex;
-        justify-content: center;
-        margin-top: 12px;
+        height: auto;
     }
 
     .award-image img {
-        width: 140px;
+        width: 100%;
         height: auto;
+
+        object-fit: contain;
+
+        border-radius: 8px;
     }
 
     /* Publications */
@@ -1679,6 +1726,7 @@ footer p{
     }
 
     .skills-grid{
+        grid-template-columns:1fr;
         gap:20px;
     }
 
@@ -1806,28 +1854,67 @@ footer p{
         margin-top:20px;
     }
 
-    .award-card {
-        flex-direction: column;
-        align-items: flex-start;
+    /* Awards */
 
-        gap: 20px;
-        padding: 24px;
+    .award-card {
+        display: grid;
+
+        grid-template-columns: auto 1fr;
+        grid-template-areas:
+            "icon content"
+            "image image";
+
+        align-items: start;
+        gap: 20px 16px;
+
+        padding: 20px;
     }
 
     .award-icon {
+        grid-area: icon;
+
         width: 70px;
         height: 70px;
 
-        font-size: 2rem;
+        font-size: 1.9rem;
     }
 
-    .award-year {
-        margin-left: 35px;
-        transform: translateX(-50%);
+    .award-content {
+        grid-area: content;
+    }
+
+    .award-meta {
+        margin-bottom: 10px;
     }
 
     .award-content h3 {
-        font-size: 1.3rem;
+        font-size: 1.2rem;
+        line-height: 1.4;
+    }
+
+    .award-organization {
+        margin-bottom: 12px;
+
+        font-size: 0.9rem;
+    }
+
+    .award-description {
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+
+    .award-image {
+        grid-area: image;
+        width: 70%;
+        height: auto;
+        justify-self: center;
+    }
+
+    .award-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        border-radius: 8px;
     }
 
     .cert-cards {
@@ -1882,7 +1969,6 @@ footer p{
     .cert-card.active .cert-details {
         max-height: 400px;
         padding: 0 16px 18px;
-
         opacity: 1;
     }  
 
@@ -1898,6 +1984,57 @@ footer p{
         right: auto;
 
         transform: rotate(270deg);
+    }
+
+    /* Publications */
+
+    .publications-container {
+        gap: 16px;
+    }
+
+    .publication-card {
+        gap: 14px;
+        padding: 20px;
+    }
+
+    .publication-icon {
+        width: 42px;
+        height: 42px;
+
+        border-radius: 10px;
+
+        font-size: 1.05rem;
+    }
+
+    .publication-meta {
+        flex-wrap: wrap;
+        gap: 8px;
+
+        margin-bottom: 8px;
+    }
+
+    .publication-content h3 {
+        font-size: 1rem;
+        line-height: 1.4;
+    }
+
+    .publication-venue {
+        margin-bottom: 12px;
+
+        font-size: 0.82rem;
+    }
+
+    .publication-description {
+        margin-bottom: 16px;
+
+        font-size: 0.88rem;
+        line-height: 1.6;
+    }
+
+    .publication-link {
+        padding: 7px 12px;
+
+        font-size: 0.8rem;
     }
 
     .contact-card{

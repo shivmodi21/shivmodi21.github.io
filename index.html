@@ -446,23 +446,24 @@
         <!-- ========= AWARDS & CERTIFICATIONS =============== -->
 
         <section id="achievements">
-            <h2>Awards & Certifications</h2>
+            <h2>Award & Certifications</h2>
 
-            <h3 class="achievements-subtitle">Awards</h3>
+            <h3 class="achievements-subtitle">Award</h3>
 
             <div class="awards">
-                <div class="award-card">
 
-                    <!-- Award Icon -->
+                <article class="award-card">
+
+                    <!-- Icon -->
                     <div class="award-icon">
                         <i class="fa-solid fa-trophy"></i>
                     </div>
 
                     <!-- Award Content -->
                     <div class="award-content">
-
-                        <span class="award-year">2021</span>
-
+                        <div class="award-meta">
+                            <span class="award-year">2021</span>
+                        </div>
                         <h3>Young Researchers' Prize</h3>
 
                         <p class="award-organization">
@@ -479,10 +480,13 @@
 
                     <!-- Award Image -->
                     <div class="award-image">
-                        <img src="awards/IEEE.jpg"
-                            alt="Young Researchers' Prize Award">
+                        <img
+                            src="awards/young-researchers-prize.jpg"
+                            alt="Young Researchers' Prize award certificate"
+                        >
                     </div>
-                </div>
+
+                </article>
             </div>
 
             <h3 class="achievements-subtitle">Certifications</h3>
@@ -491,6 +495,54 @@
 
                 <div class="cert-cards">
                 <!-- Certification 1 -->
+                    <div class="cert-card">
+
+                        <div class="cert-header">
+
+                            <div class="cert-logo">
+                                <i class="fa-solid fa-certificate"></i>
+                            </div>
+
+                            <div class="cert-info">
+                                <h3>Google Data Analytics Specialization</h3>
+                                <p>Google</p>
+                            </div>
+
+                            <button class="cert-toggle"
+                                    type="button"
+                                    aria-label="Expand certification details"
+                                    aria-expanded="false">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+
+                        </div>
+
+                        <div class="cert-details">
+
+                            <p class="cert-skills">
+                                <strong>Skills:</strong>
+                                SQL · R · Data Visualization · Data Analysis
+                            </p>
+
+                            <!-- <p class="cert-description">
+                                Completed professional training in data science,
+                                data analysis and Python-based data workflows.
+                            </p> -->
+
+                            <a href="#"
+                            class="cert-link"
+                            target="_blank"
+                            rel="noopener noreferrer">
+                                View Credential
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Certification 2 -->
                     <div class="cert-card">
 
                         <div class="cert-header">
@@ -517,61 +569,13 @@
 
                             <p class="cert-skills">
                                 <strong>Skills:</strong>
-                                Python · SQL · Machine Learning · Data Analysis
+                                SQL · Python · Machine Learning · Data Science
                             </p>
 
-                            <p class="cert-description">
-                                Completed professional training in data science,
-                                data analysis and Python-based data workflows.
-                            </p>
-
-                            <a href="#"
-                            class="cert-link"
-                            target="_blank"
-                            rel="noopener noreferrer">
-                                View Credential
-                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                            </a>
-
-                        </div>
-
-                    </div>
-
-
-                    <!-- Certification 2 -->
-                    <div class="cert-card">
-
-                        <div class="cert-header">
-
-                            <div class="cert-logo">
-                                <i class="fa-solid fa-certificate"></i>
-                            </div>
-
-                            <div class="cert-info">
-                                <h3>Certification Name</h3>
-                                <p>Issuing Organization</p>
-                            </div>
-
-                            <button class="cert-toggle"
-                                    type="button"
-                                    aria-label="Expand certification details"
-                                    aria-expanded="false">
-                                <i class="fa-solid fa-chevron-right"></i>
-                            </button>
-
-                        </div>
-
-                        <div class="cert-details">
-
-                            <p class="cert-skills">
-                                <strong>Skills:</strong>
-                                Skill 1 · Skill 2 · Skill 3
-                            </p>
-
-                            <p class="cert-description">
+                            <!-- <p class="cert-description">
                                 Add a short description of what you learned or
                                 accomplished through this certification.
-                            </p>
+                            </p> -->
 
                             <a href="#"
                             class="cert-link"
@@ -596,8 +600,8 @@
                             </div>
 
                             <div class="cert-info">
-                                <h3>Certification Name</h3>
-                                <p>Issuing Organization</p>
+                                <h3>Machine Learning Specialization</h3>
+                                <p>Stanford University</p>
                             </div>
 
                             <button class="cert-toggle"
@@ -613,13 +617,13 @@
 
                             <p class="cert-skills">
                                 <strong>Skills:</strong>
-                                Skill 1 · Skill 2 · Skill 3
+                                ANN · ML · RL · Decision Trees · Regression Models
                             </p>
 
-                            <p class="cert-description">
+                            <!-- <p class="cert-description">
                                 Add a short description of what you learned or
                                 accomplished through this certification.
-                            </p>
+                            </p> -->
 
                             <a href="#"
                             class="cert-link"
@@ -643,8 +647,8 @@
                             </div>
 
                             <div class="cert-info">
-                                <h3>Certification Name</h3>
-                                <p>Issuing Organization</p>
+                                <h3>IBM Data Analyst Professional Certificate</h3>
+                                <p>IBM</p>
                             </div>
 
                             <button class="cert-toggle"
@@ -660,13 +664,13 @@
 
                             <p class="cert-skills">
                                 <strong>Skills:</strong>
-                                Skill 1 · Skill 2 · Skill 3
+                                Seaborn · Plotly · IBM Cognos · Data Analysis · Data Visualization
                             </p>
 
-                            <p class="cert-description">
+                            <!-- <p class="cert-description">
                                 Add a short description of what you learned or
                                 accomplished through this certification.
-                            </p>
+                            </p> -->
 
                             <a href="#"
                             class="cert-link"
