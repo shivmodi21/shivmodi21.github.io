@@ -823,7 +823,7 @@ nav a.active::after{
 .cert-card {
     position: relative;
     flex: 1;
-    height: 280px;
+    height: 320px;
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
@@ -886,6 +886,12 @@ nav a.active::after{
         background 0.3s ease;
 }
 
+.cert-logo img {
+    width: 70%;
+    height: 70%;
+    object-fit: contain;
+}
+
 .cert-card:hover .cert-logo {
     transform: scale(1.05);
     background: rgba(88, 166, 255, 0.16);
@@ -896,11 +902,15 @@ nav a.active::after{
 
 .cert-info {
     text-align: center;
-
     transition: transform 0.45s ease;
 }
 
 .cert-info h3 {
+    min-height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     margin-bottom: 5px;
     color: #f0f6fc;
     font-size: 1rem;
@@ -918,7 +928,7 @@ nav a.active::after{
 .cert-toggle {
     position: absolute;
 
-    top: 224px;
+    top: 264px;
     right: 20px;
 
     display: flex;
@@ -973,7 +983,7 @@ nav a.active::after{
 /* Expanded State */
 
 .cert-card.active {
-    flex: 2;
+    flex: 2.3;
     border-color: #58a6ff;
     box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.25),
@@ -988,7 +998,7 @@ nav a.active::after{
     height: auto;
     gap: 20px;
 
-    padding: 24px;
+    padding: 24px 72px 20px 24px;
 }
 
 .cert-card.active .cert-logo {
@@ -999,12 +1009,19 @@ nav a.active::after{
 }
 
 .cert-card.active .cert-info {
+    width: auto;
+    padding: 0;
     text-align: left;
+}
+
+.cert-card.active .cert-info h3 {
+    min-height: auto;
+    justify-content: flex-start;
 }
 
 .cert-card.active .cert-details {
     max-height: 300px;
-    padding: 0 20px 20px;
+    padding: 0 24px 24px;
     opacity: 1;
 }
 
@@ -1418,6 +1435,15 @@ footer p{
 .show{
     opacity:1;
     transform:translateY(0);
+}
+
+@media (min-width: 769px) {
+
+    .cert-card:not(.active) .cert-info p {
+        max-width: calc(100% - 60px);
+        margin-inline: auto;
+    }
+
 }
 
 @media (max-width:480px){
@@ -1935,12 +1961,18 @@ footer p{
     .cert-card.active .cert-info {
         flex: 1;
         min-width: 0;
+        width: auto;
+        padding: 0;
         text-align: left;
     }
 
     .cert-info h3 {
+        min-height: auto;
+        display: block;
+        margin-bottom: 4px;
         font-size: 0.95rem;
         line-height: 1.4;
+        text-align: left;
     }
 
     .cert-info p {
