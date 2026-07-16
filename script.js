@@ -120,6 +120,18 @@ const indicatorContainer = document.querySelector(".project-indicator");
 
 let currentIndex = 0;
 
+// ===============================
+// Show/Hide Navigation Buttons
+// ===============================
+
+function updateControls() {
+
+    const isTouch =
+        window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+
+    prevBtn.style.display = isTouch ? "none" : "flex";
+    nextBtn.style.display = isTouch ? "none" : "flex";
+}
 
 // ===============================
 // Create Indicators
@@ -252,6 +264,7 @@ window.addEventListener("resize", () => {
 createIndicators();
 setCarouselPadding();
 updateCarousel();
+updateControls();
 
 // ===============================
 // Mobile Swipe Navigation
