@@ -321,6 +321,22 @@ viewport.addEventListener("touchend", (event) => {
 
 }, { passive: true });
 
+const coin = document.querySelector(".coin-inner");
+
+window.addEventListener("load", () => {
+
+    setTimeout(() => {
+
+        coin.style.transform = "rotate3d(0.5, 1, 0, 180deg)";
+
+        setTimeout(() => {
+            coin.style.transform = "";
+        }, 850);
+
+    }, 500);
+
+});
+
 // ===============================
 // Achievements Accordion
 // ===============================

@@ -159,9 +159,77 @@ nav a.active::after{
     width:clamp(180px,20vw,220px);
     aspect-ratio:1;
     margin-bottom:36px;
-    object-fit:cover;
+    perspective:1200px;
+}
+
+.hero-coin{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.coin-inner{
+    position:relative;
+
+    width:100%;
+    height:100%;
+
+    transform-style:preserve-3d;
+
+    transition:transform .85s ease;
+}
+
+.coin-face{
+    position:absolute;
+    inset:0;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
     border:5px solid var(--primary);
     border-radius:50%;
+
+    overflow:hidden;
+
+    backface-visibility:hidden;
+}
+
+.coin-front{
+    background:#111827;
+}
+
+.coin-logo{
+    width:100%;
+    height:100%;
+    object-fit:contain;
+
+    transform:scale(1.06);
+}
+
+.coin-front img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.coin-back{
+    background:#161b22;
+
+    transform: rotate3d(0.5, 1, 0, 180deg);
+}
+
+.coin-back span{
+    font-size:5rem;
+    font-weight:800;
+
+    color:var(--primary);
+
+    font-family:"JetBrains Mono", monospace;
+}
+
+.hero-coin:hover .coin-inner{
+    transform: rotate3d(0.5, 1, 0, 180deg);
 }
 
 #hero h1{
