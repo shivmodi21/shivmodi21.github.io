@@ -1646,23 +1646,52 @@ footer p{
     }
 }
 
+@media (max-width: 992px){
+
+    .project-card{
+        flex: 0 0 75%;
+    }
+
+    .projects-track{
+        gap:20px;
+    }
+
+    .project-preview{
+        height:220px;
+    }
+}
+
 @media (max-width:768px){
 
     nav{
-        width:90%;
-        height:64px;
-        padding:0;
-        flex-direction:row;
-        position:relative;
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: 64px;
     }
 
     nav h2{
-        font-size:1.4rem;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0;
+        z-index: 1;
+        pointer-events: none;
     }
 
     .menu-toggle{
-        display:block;
-        z-index:1001;
+        display: flex;
+
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+
+        align-items: center;
+        justify-content: center;
+
+        z-index: 1001;
     }
 
     nav ul{
@@ -1869,6 +1898,7 @@ footer p{
         width:100%;
         padding:12px 0;
         touch-action:pan-y;
+        padding-inline:12px;
     }
 
     .projects-track{
@@ -1876,7 +1906,7 @@ footer p{
     }
 
     .project-card{
-        flex:0 0 100%;
+        flex:0 0 88%;
         padding:20px;
     }
 
