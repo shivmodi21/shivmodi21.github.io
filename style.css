@@ -2034,7 +2034,6 @@ footer p{
         width:100%;
         padding:12px 0;
         touch-action:pan-y;
-        padding-inline:12px;
     }
 
     .projects-track{
@@ -2042,7 +2041,7 @@ footer p{
     }
 
     .project-card{
-        flex:0 0 88%;
+        flex:0 0 100%;
         padding:20px;
     }
 
