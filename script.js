@@ -109,233 +109,233 @@ backBtn.addEventListener("click", () => {
 // Projects Carousel
 // ===============================
 
-const track = document.querySelector(".projects-track");
-const cards = document.querySelectorAll(".project-card");
-const viewport = document.querySelector(".projects-viewport");
+// const track = document.querySelector(".projects-track");
+// const cards = document.querySelectorAll(".project-card");
+// const viewport = document.querySelector(".projects-viewport");
 
-const prevBtn = document.querySelector(".prev");
-const nextBtn = document.querySelector(".next");
+// const prevBtn = document.querySelector(".prev");
+// const nextBtn = document.querySelector(".next");
 
-const indicatorContainer = document.querySelector(".project-indicator");
+// const indicatorContainer = document.querySelector(".project-indicator");
 
-let currentIndex = 0;
+// let currentIndex = 0;
 
-// ===============================
-// Show/Hide Navigation Buttons
-// ===============================
+// // ===============================
+// // Show/Hide Navigation Buttons
+// // ===============================
 
-function updateControls() {
+// function updateControls() {
 
-    const isTouch =
-        window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+//     const isTouch =
+//         window.matchMedia("(hover: none) and (pointer: coarse)").matches;
 
-    prevBtn.style.display = isTouch ? "none" : "flex";
-    nextBtn.style.display = isTouch ? "none" : "flex";
-}
+//     prevBtn.style.display = isTouch ? "none" : "flex";
+//     nextBtn.style.display = isTouch ? "none" : "flex";
+// }
 
-// ===============================
-// Create Indicators
-// ===============================
+// // ===============================
+// // Create Indicators
+// // ===============================
 
-function createIndicators(){
+// function createIndicators(){
 
-    indicatorContainer.innerHTML = "";
+//     indicatorContainer.innerHTML = "";
 
-    cards.forEach((_, index) => {
+//     cards.forEach((_, index) => {
 
-        const dot = document.createElement("span");
+//         const dot = document.createElement("span");
 
-        if(index === 0){
-            dot.classList.add("active");
-        }
+//         if(index === 0){
+//             dot.classList.add("active");
+//         }
 
-        dot.addEventListener("click", () => {
+//         dot.addEventListener("click", () => {
 
-            currentIndex = index;
-            updateCarousel();
+//             currentIndex = index;
+//             updateCarousel();
 
-        });
+//         });
 
-        indicatorContainer.appendChild(dot);
+//         indicatorContainer.appendChild(dot);
 
-    });
+//     });
 
-}
+// }
 
 
-// ===============================
-// Set Carousel Side Padding
-// ===============================
+// // ===============================
+// // Set Carousel Side Padding
+// // ===============================
 
-function setCarouselPadding(){
+// function setCarouselPadding(){
 
-    const viewportWidth = viewport.clientWidth;
-    const cardWidth = cards[0].getBoundingClientRect().width;
+//     const viewportWidth = viewport.clientWidth;
+//     const cardWidth = cards[0].getBoundingClientRect().width;
 
-    const sidePadding = (viewportWidth - cardWidth) / 2;
+//     const sidePadding = (viewportWidth - cardWidth) / 2;
 
-    track.style.paddingLeft = `${sidePadding}px`;
-    track.style.paddingRight = `${sidePadding}px`;
+//     track.style.paddingLeft = `${sidePadding}px`;
+//     track.style.paddingRight = `${sidePadding}px`;
 
-}
+// }
 
 
-// ===============================
-// Update Carousel
-// ===============================
+// // ===============================
+// // Update Carousel
+// // ===============================
 
-function updateCarousel(){
+// function updateCarousel(){
 
-    const cardWidth = cards[0].getBoundingClientRect().width;
+//     const cardWidth = cards[0].getBoundingClientRect().width;
 
-    const trackStyles = window.getComputedStyle(track);
-    const gap = parseFloat(trackStyles.gap) || 0;
+//     const trackStyles = window.getComputedStyle(track);
+//     const gap = parseFloat(trackStyles.gap) || 0;
 
-    const moveAmount = currentIndex * (cardWidth + gap);
+//     const moveAmount = currentIndex * (cardWidth + gap);
 
-    track.style.transform = `translateX(-${moveAmount}px)`;
+//     track.style.transform = `translateX(-${moveAmount}px)`;
 
-    // Update active indicator
+//     // Update active indicator
 
-    const indicators =
-        indicatorContainer.querySelectorAll("span");
+//     const indicators =
+//         indicatorContainer.querySelectorAll("span");
 
-    indicators.forEach((dot, index) => {
+//     indicators.forEach((dot, index) => {
 
-        dot.classList.toggle(
-            "active",
-            index === currentIndex
-        );
+//         dot.classList.toggle(
+//             "active",
+//             index === currentIndex
+//         );
 
-    });
+//     });
 
-    // Disable buttons at boundaries
+//     // Disable buttons at boundaries
 
-    prevBtn.disabled = currentIndex === 0;
-    nextBtn.disabled = currentIndex === cards.length - 1;
+//     prevBtn.disabled = currentIndex === 0;
+//     nextBtn.disabled = currentIndex === cards.length - 1;
 
-}
+// }
 
 
-// ===============================
-// Navigation Buttons
-// ===============================
+// // ===============================
+// // Navigation Buttons
+// // ===============================
 
-nextBtn.addEventListener("click", () => {
+// nextBtn.addEventListener("click", () => {
 
-    if(currentIndex < cards.length - 1){
+//     if(currentIndex < cards.length - 1){
 
-        currentIndex++;
-        updateCarousel();
+//         currentIndex++;
+//         updateCarousel();
 
-    }
+//     }
 
-});
+// });
 
 
-prevBtn.addEventListener("click", () => {
+// prevBtn.addEventListener("click", () => {
 
-    if(currentIndex > 0){
+//     if(currentIndex > 0){
 
-        currentIndex--;
-        updateCarousel();
+//         currentIndex--;
+//         updateCarousel();
 
-    }
+//     }
 
-});
+// });
 
 
-// ===============================
-// Handle Resize
-// ===============================
+// // ===============================
+// // Handle Resize
+// // ===============================
 
-window.addEventListener("resize", () => {
+// window.addEventListener("resize", () => {
 
-    setCarouselPadding();
-    updateCarousel();
+//     setCarouselPadding();
+//     updateCarousel();
 
-});
+// });
 
 
-// ===============================
-// Initialize Carousel
-// ===============================
+// // ===============================
+// // Initialize Carousel
+// // ===============================
 
-createIndicators();
-setCarouselPadding();
-updateCarousel();
-updateControls();
+// createIndicators();
+// setCarouselPadding();
+// updateCarousel();
+// updateControls();
 
-// ===============================
-// Mobile Swipe Navigation
-// ===============================
+// // ===============================
+// // Mobile Swipe Navigation
+// // ===============================
 
-let touchStartX = 0;
-let touchStartY = 0;
+// let touchStartX = 0;
+// let touchStartY = 0;
 
-const swipeThreshold = 50;
+// const swipeThreshold = 50;
 
-viewport.addEventListener("touchstart", (event) => {
+// viewport.addEventListener("touchstart", (event) => {
 
-    touchStartX = event.touches[0].clientX;
-    touchStartY = event.touches[0].clientY;
+//     touchStartX = event.touches[0].clientX;
+//     touchStartY = event.touches[0].clientY;
 
-}, { passive: true });
+// }, { passive: true });
 
 
-viewport.addEventListener("touchend", (event) => {
+// viewport.addEventListener("touchend", (event) => {
 
-    const touchEndX = event.changedTouches[0].clientX;
-    const touchEndY = event.changedTouches[0].clientY;
+//     const touchEndX = event.changedTouches[0].clientX;
+//     const touchEndY = event.changedTouches[0].clientY;
 
-    const deltaX = touchEndX - touchStartX;
-    const deltaY = touchEndY - touchStartY;
+//     const deltaX = touchEndX - touchStartX;
+//     const deltaY = touchEndY - touchStartY;
 
 
-    // Ignore primarily vertical gestures
-    if(Math.abs(deltaY) > Math.abs(deltaX)){
-        return;
-    }
+//     // Ignore primarily vertical gestures
+//     if(Math.abs(deltaY) > Math.abs(deltaX)){
+//         return;
+//     }
 
 
-    // Swipe left → next project
-    if(deltaX < -swipeThreshold){
+//     // Swipe left → next project
+//     if(deltaX < -swipeThreshold){
 
-        if(currentIndex < cards.length - 1){
-            currentIndex++;
-            updateCarousel();
-        }
+//         if(currentIndex < cards.length - 1){
+//             currentIndex++;
+//             updateCarousel();
+//         }
 
-    }
+//     }
 
 
-    // Swipe right → previous project
-    else if(deltaX > swipeThreshold){
+//     // Swipe right → previous project
+//     else if(deltaX > swipeThreshold){
 
-        if(currentIndex > 0){
-            currentIndex--;
-            updateCarousel();
-        }
+//         if(currentIndex > 0){
+//             currentIndex--;
+//             updateCarousel();
+//         }
 
-    }
+//     }
 
-}, { passive: true });
+// }, { passive: true });
 
-const coin = document.querySelector(".coin-inner");
+// const coin = document.querySelector(".coin-inner");
 
-window.addEventListener("load", () => {
+// window.addEventListener("load", () => {
 
-    setTimeout(() => {
+//     setTimeout(() => {
 
-        coin.style.transform = "rotate3d(0.5, 1, 0, 180deg)";
+//         coin.style.transform = "rotate3d(0.5, 1, 0, 180deg)";
 
-        setTimeout(() => {
-            coin.style.transform = "";
-        }, 850);
+//         setTimeout(() => {
+//             coin.style.transform = "";
+//         }, 850);
 
-    }, 500);
+//     }, 500);
 
-});
+// });
 
 // ===============================
 // Achievements Accordion
