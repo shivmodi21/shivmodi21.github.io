@@ -2041,7 +2041,7 @@ footer p{
     }
 
     .project-card{
-        flex:0 0 100%;
+        flex:0 0 88%;
         padding:20px;
     }
 
@@ -2279,6 +2279,32 @@ footer p{
     .primary-btn,
     .secondary-btn{
         width:100%;
+    }
+
+    @keyframes projectSwipeHint{
+
+        0%,
+        100%{
+            transform:translateX(0);
+        }
+
+        40%{
+            transform:translateX(-18px);
+        }
+
+        70%{
+            transform:translateX(4px);
+        }
+
+    }
+
+    .projects-track.swipe-hint .project-card:first-child{
+
+        animation:
+            projectSwipeHint
+            1.1s
+            ease-in-out;
+
     }
 
 }

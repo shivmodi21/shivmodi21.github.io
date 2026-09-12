@@ -167,7 +167,28 @@ function createIndicators(){
 // Set Carousel Side Padding
 // ===============================
 
+// function setCarouselPadding(){
+
+//     const viewportWidth = viewport.clientWidth;
+//     const cardWidth = cards[0].getBoundingClientRect().width;
+
+//     const sidePadding = (viewportWidth - cardWidth) / 2;
+
+//     track.style.paddingLeft = `${sidePadding}px`;
+//     track.style.paddingRight = `${sidePadding}px`;
+
+// }
+
 function setCarouselPadding(){
+
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if(isMobile){
+        track.style.paddingLeft = "0px";
+        track.style.paddingRight = "0px";
+
+        return;
+    }
 
     const viewportWidth = viewport.clientWidth;
     const cardWidth = cards[0].getBoundingClientRect().width;
@@ -265,6 +286,46 @@ createIndicators();
 setCarouselPadding();
 updateCarousel();
 updateControls();
+
+// ===============================
+// Mobile Swipe Hint
+// ===============================
+
+const projectSection = document.querySelector("#projects");
+
+const projectHintObserver =
+    new IntersectionObserver((entries, observer) => {
+
+        entries.forEach(entry => {
+
+            if(!entry.isIntersecting){
+                return;
+            }
+
+            const isMobile =
+                window.matchMedia(
+                    "(max-width: 768px)"
+                ).matches;
+
+            if(isMobile && currentIndex === 0){
+
+                track.classList.add("swipe-hint");
+
+                setTimeout(() => {
+                    track.classList.remove("swipe-hint");
+                }, 1200);
+
+            }
+
+            observer.unobserve(entry.target);
+
+        });
+
+    }, {
+        threshold:0.4
+    });
+
+projectHintObserver.observe(projectSection);
 
 // ===============================
 // Mobile Swipe Navigation
