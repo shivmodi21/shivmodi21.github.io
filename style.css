@@ -91,7 +91,7 @@ header.scrolled{
 }
 
 nav{
-    width:min(1200px,90%);
+    width:min(1200px, 90%);
     height:72px;
     margin:0 auto;
     display:flex;
@@ -579,8 +579,8 @@ nav a.active::after{
 /* Card */
 
 .project-card{
-    /* flex:0 0 60%; */
-    flex:0 0 clamp(380px, 38vw, 430px);
+    /* flex:0 0 clamp(380px, 38vw, 430px); */
+    flex: 0 0 500px;
     padding:28px;
     background:var(--card);
     border:1px solid var(--border);
@@ -943,6 +943,8 @@ nav a.active::after{
 
 .cert-cards {
     display: flex;
+    flex-direction:row;
+    align-items:stretch;
     gap: 16px;
 }
 
@@ -951,8 +953,11 @@ nav a.active::after{
 
 .cert-card {
     position: relative;
+    display:flex;
+    flex-direction:column;
     flex: 1;
-    height: 320px;
+    min-width: 0;
+    height: auto;
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
@@ -983,13 +988,14 @@ nav a.active::after{
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    flex: 1;
     gap: 16px;
     height: 100%;
-    padding: 24px;
+    padding: 20px 16px;
     cursor: pointer;
-    /* transition:
+    transition:
         gap 0.45s ease,
-        padding 0.45s ease; */
+        padding 0.45s ease;
 }
 
 /* Certification Logo */
@@ -999,8 +1005,8 @@ nav a.active::after{
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 120px;
+    width: 132px;
+    height: 132px;
     background: rgba(88, 166, 255, 0.1);
     border: 1px solid rgba(88, 166, 255, 0.25);
     border-radius: 14px;
@@ -1031,19 +1037,22 @@ nav a.active::after{
 
 .cert-info {
     text-align: center;
+    width: 100%;
+    min-width: 0;
     transition: transform 0.45s ease;
 }
 
 .cert-info h3 {
-    min-height: 72px;
+    min-height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    overflow-wrap:anywhere;
     margin-bottom: 5px;
     color: #f0f6fc;
     font-size: 1rem;
     font-weight: 600;
+    line-height: 1.4;
 }
 
 .cert-info p {
@@ -1055,8 +1064,9 @@ nav a.active::after{
 /* Toggle Button */
 
 .cert-toggle {
-    position: absolute;
-
+    position: static;
+    margin-top: auto;
+    flex-shrink: 0;
     top: 264px;
     right: 20px;
 
@@ -1114,6 +1124,8 @@ nav a.active::after{
 .cert-card.active {
     flex: 2.3;
     border-color: #58a6ff;
+    min-width: 0;
+    height: auto;
     box-shadow:
         0 8px 24px rgba(0, 0, 0, 0.25),
         0 0 16px rgba(88, 166, 255, 0.08);
@@ -1125,9 +1137,7 @@ nav a.active::after{
     align-items: center;
 
     height: auto;
-    gap: 20px;
-
-    padding: 24px 72px 20px 24px;
+    gap: 16px;
 }
 
 .cert-card.active .cert-logo {
@@ -1150,7 +1160,7 @@ nav a.active::after{
 
 .cert-card.active .cert-details {
     max-height: 300px;
-    padding: 0 24px 24px;
+    padding: 0 16px 20px;
     opacity: 1;
 }
 
@@ -1158,8 +1168,8 @@ nav a.active::after{
 /* Rotate Arrow */
 
 .cert-card.active .cert-toggle {
-    top: 24px;
-    right: 24px;
+    top: auto;
+    right: auto;
 
     transform: rotate(180deg);
 
@@ -1579,6 +1589,17 @@ footer p{
     }
 }
 
+@media (max-width:1100px) {
+
+    /* ===========================
+       NAVIGATION
+    =========================== */
+
+    nav ul{
+        gap:22px;
+    }
+}
+
 @media (max-width:1024px){
 
     /* ===========================
@@ -1586,13 +1607,23 @@ footer p{
     =========================== */
 
     nav{
-        width:92%;
+        flex-direction:column;
+        align-items:flex-start;
+        height:auto;
+        padding:16px 0;
+        gap:12px;
+    }
+
+    nav h2{
+        white-space:nowrap;
     }
 
     nav ul{
-        gap:20px;
+        width:100%;
+        justify-content:space-between;
+        gap:16px;
+        flex-wrap:wrap;
     }
-
 
     /* ===========================
        GENERAL
@@ -1631,7 +1662,7 @@ footer p{
     =========================== */
 
     .project-card{
-        flex:0 0 75%;
+        flex:0 0 430px;
     }
 
     .projects-track{
@@ -1639,7 +1670,8 @@ footer p{
     }
 
     .project-preview{
-        height:220px;
+        width:100%;
+        aspect-ratio:16/9;
     }
 
 
@@ -1662,20 +1694,13 @@ footer p{
         width:260px;
     }
 
-    /* ===========================
-       CERTIFICATIONS
-    =========================== */
-
-    .cert-cards{
-        flex-direction:column;
-        gap:16px;
+    .cert-card.active{
+        flex:2;
     }
 
-    .cert-card,
-    .cert-card.active{
-        flex:none;
-        width:100%;
-        height:auto;
+    .cert-logo{
+        width:100px;
+        height:100px;
     }
 
 }
@@ -1871,12 +1896,12 @@ footer p{
     =========================== */
 
     .project-showcase{
-        gap:0;
+        gap: 5px;
     }
 
     .projects-viewport{
         width:100%;
-        padding:12px 0;
+        padding:12px 10px;
         touch-action:pan-y;
     }
 
@@ -1885,7 +1910,8 @@ footer p{
     }
 
     .project-card{
-        flex:0 0 70%;
+        flex:0 0 100%;
+        width:100%;
         padding:20px;
     }
 
@@ -1960,11 +1986,13 @@ footer p{
 
     .cert-cards{
         flex-direction:column;
+        gap: 16px;
     }
 
     .cert-card,
     .cert-card.active{
         flex:none;
+        width: 100%;
         height:auto;
     }
 

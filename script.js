@@ -180,24 +180,20 @@ function createIndicators(){
 // }
 
 function setCarouselPadding(){
-
-    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    const isMobile = window.matchMedia("(max-width:768px)").matches;
 
     if(isMobile){
         track.style.paddingLeft = "0px";
         track.style.paddingRight = "0px";
-
         return;
     }
 
     const viewportWidth = viewport.clientWidth;
     const cardWidth = cards[0].getBoundingClientRect().width;
-
     const sidePadding = (viewportWidth - cardWidth) / 2;
 
     track.style.paddingLeft = `${sidePadding}px`;
     track.style.paddingRight = `${sidePadding}px`;
-
 }
 
 
