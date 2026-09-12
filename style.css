@@ -1662,13 +1662,20 @@ footer p{
         width:260px;
     }
 
-
     /* ===========================
        CERTIFICATIONS
     =========================== */
 
     .cert-cards{
-        gap:12px;
+        flex-direction:column;
+        gap:16px;
+    }
+
+    .cert-card,
+    .cert-card.active{
+        flex:none;
+        width:100%;
+        height:auto;
     }
 
 }
@@ -1878,7 +1885,7 @@ footer p{
     }
 
     .project-card{
-        flex:0 0 88%;
+        flex:0 0 70%;
         padding:20px;
     }
 
