@@ -2107,14 +2107,14 @@ footer p{
     }
 
     .contact-buttons{
-        flex-direction:column;
+        /* flex-direction:column; */
         gap:14px;
         margin-top:24px;
     }
 
-    .primary-btn,
+    /* .primary-btn,
     .secondary-btn{
         width:100%;
-    }
+    } */
 
 }
