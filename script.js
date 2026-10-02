@@ -126,11 +126,11 @@ let currentIndex = 0;
 
 function updateControls() {
 
-    const isTouch =
-        window.matchMedia("(hover: none) and (pointer: coarse)").matches;
+    const hideArrows =
+        window.matchMedia("(max-width: 768px)").matches;
 
-    prevBtn.style.display = isTouch ? "none" : "flex";
-    nextBtn.style.display = isTouch ? "none" : "flex";
+    prevBtn.style.display = hideArrows ? "none" : "flex";
+    nextBtn.style.display = hideArrows ? "none" : "flex";
 }
 
 // ===============================
@@ -270,6 +270,7 @@ window.addEventListener("resize", () => {
 
     setCarouselPadding();
     updateCarousel();
+    updateControls();
 
 });
 
