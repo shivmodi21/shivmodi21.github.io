@@ -1222,16 +1222,23 @@ nav a.active::after{
 /* Skills */
 
 .cert-skills {
-    margin-bottom: 12px;
-
-    color: #c9d1d9;
-
-    font-size: 0.9rem;
-    line-height: 1.6;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 0 0 14px;
+    padding: 0;
+    list-style: none;
 }
 
-.cert-skills strong {
-    color: #58a6ff;
+.cert-skills li {
+    padding: 4px 10px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--bg);
+    color: var(--text-secondary);
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.4;
 }
 
 
@@ -2339,6 +2346,135 @@ footer p{
         right:14px;
         bottom:14px;
         width:44px;
+    }
+
+}
+
+/* Laptop and tablet: four certificates as a readable 2×2 grid */
+@media (min-width:769px){
+
+    .cert-cards{
+        display:grid;
+        grid-template-columns:repeat(2, minmax(0, 1fr));
+        gap:18px;
+        align-items:stretch;
+    }
+
+    .cert-card,
+    .cert-card.active{
+        display:flex;
+        flex-direction:column;
+        flex:none;
+        min-width:0;
+        height:auto;
+        padding:22px;
+        border-top:2px solid rgba(108,182,255,.55);
+    }
+
+    .cert-card:hover,
+    .cert-card.active:hover{
+        transform:translateY(-3px);
+    }
+
+    .cert-header,
+    .cert-card.active .cert-header{
+        flex-direction:row;
+        justify-content:flex-start;
+        align-items:center;
+        flex:0 0 auto;
+        gap:14px;
+        height:auto;
+        padding:0;
+        cursor:default;
+    }
+
+    .cert-logo,
+    .cert-card.active .cert-logo{
+        width:58px;
+        height:58px;
+        border-radius:12px;
+    }
+
+    .cert-info,
+    .cert-card.active .cert-info{
+        flex:1;
+        width:auto;
+        min-width:0;
+        text-align:left;
+    }
+
+    .cert-info h3,
+    .cert-card.active .cert-info h3{
+        display:block;
+        margin-bottom:4px;
+        font-size:1.05rem;
+        line-height:1.35;
+        text-align:left;
+    }
+
+    .cert-toggle,
+    .cert-card.active .cert-toggle{
+        display:none;
+    }
+
+    .cert-details,
+    .cert-card.active .cert-details{
+        display:flex;
+        flex-direction:column;
+        flex:1;
+        gap:14px;
+        max-height:none;
+        opacity:1;
+        padding:16px 0 0;
+    }
+
+    .cert-description{
+        flex:1;
+        margin-bottom:0;
+        font-size:.95rem;
+    }
+
+    .cert-skills{
+        margin-bottom:0;
+    }
+
+    .cert-link{
+        align-self:flex-start;
+        margin-top:auto;
+        padding:8px 12px;
+        border:1px solid rgba(108,182,255,.35);
+        border-radius:8px;
+        background:rgba(108,182,255,.08);
+        font-weight:600;
+    }
+
+}
+
+/* Tablet: same 2×2 cards, with tighter spacing */
+@media (min-width:769px) and (max-width:1024px){
+
+    .cert-cards{
+        gap:14px;
+    }
+
+    .cert-card,
+    .cert-card.active{
+        padding:18px;
+    }
+
+    .cert-logo,
+    .cert-card.active .cert-logo{
+        width:52px;
+        height:52px;
+    }
+
+    .cert-info h3,
+    .cert-card.active .cert-info h3{
+        font-size:1rem;
+    }
+
+    .cert-description{
+        font-size:.95rem;
     }
 
 }

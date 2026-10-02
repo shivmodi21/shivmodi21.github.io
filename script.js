@@ -405,7 +405,15 @@ certCards.forEach((card) => {
 
     const header = card.querySelector(".cert-header");
 
-    header.addEventListener("click", () => {
+    header.addEventListener("click", (event) => {
+
+        if (event.target.closest("a")) {
+            return;
+        }
+
+        if (window.matchMedia("(min-width: 769px)").matches) {
+            return;
+        }
 
         // Remember whether the clicked card is already active
         const isActive = card.classList.contains("active");
