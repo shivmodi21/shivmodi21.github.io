@@ -822,13 +822,21 @@ nav a.active::after{
     position: relative;
 
     display: grid;
-    grid-template-columns: 90px minmax(0, 1fr) 320px;
+
+    grid-template-columns:
+        90px
+        minmax(0, 1fr)
+        max-content
+        320px;
+
     grid-template-areas:
-        "icon meta image"
-        "icon content image";
-    
+        "icon title meta image"
+        "icon content content image";
+
     align-items: start;
-    gap: 16px 24px;
+
+    column-gap: 24px;
+    row-gap: 8px;
 
     padding: var(--card-pad);
 
@@ -908,12 +916,34 @@ nav a.active::after{
     background: rgba(210, 153, 34, 0.16);
 }
 
+.award-title {
+    grid-area: title;
+
+    align-self: center;
+    min-width: 0;
+}
+
+.award-title h3 {
+    margin: 0;
+
+    color: #f0f6fc;
+
+    font-size: 1.5rem;
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    text-align: left;
+
+    overflow-wrap: break-word;
+}
+
 .award-meta {
     grid-area: meta;
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    gap: 10px;
+    white-space: nowrap;
 }
 
 /* Award Content */
@@ -937,15 +967,6 @@ nav a.active::after{
     font-weight: 600;
 }
 
-.award-content h3 {
-    margin-bottom: 6px;
-
-    color: #f0f6fc;
-
-    font-size: 1.5rem;
-    font-weight: 600;
-}
-
 .award-organization {
     margin-bottom: 12px;
 
@@ -965,7 +986,6 @@ nav a.active::after{
 .award-image {
     grid-area: image;
     align-self: center;
-    width: 320px;
     min-height: 0;
 }
 
@@ -1764,20 +1784,26 @@ footer p{
        AWARD
     =========================== */
 
-    .award-card{
-        grid-template-columns:72px minmax(0,1fr) 240px;
-        gap:14px 18px;
-        padding:22px;
+    .award-card {
+        grid-template-columns:
+            72px
+            minmax(0, 1fr)
+            max-content
+            240px;
+    
+        grid-template-areas:
+            "icon title meta image"
+            "icon content content image";
+    
+        gap: 14px 18px;
+    
+        padding: 22px;
     }
 
     .award-icon{
         width:72px;
         height:72px;
         font-size:2rem;
-    }
-
-    .award-image{
-        width:260px;
     }
 
     .cert-card.active{
@@ -1789,6 +1815,42 @@ footer p{
         height:100px;
     }
 
+}
+
+@media (max-width:900px){
+
+    .award-card {
+        grid-template-columns: auto 1fr;
+
+        grid-template-areas:
+            "icon meta"
+            "title title"
+            "content content"
+            "image image";
+
+        gap: 16px;
+    }
+
+    .award-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.9rem;
+    }
+
+    .award-title h3 {
+        font-size: 1.25rem;
+        text-align: left;
+        white-space: normal;
+    }
+
+    .award-image {
+        width: min(900px, 80%);
+        justify-self: center;
+    }
+
+    .award-meta {
+        width: 100%;
+    }
 }
 
 @media (max-width:768px){
@@ -2087,15 +2149,22 @@ footer p{
        AWARDS
     =========================== */
 
-    .award-card{
-        grid-template-columns:auto 1fr;
-
+    .award-card {
+        grid-template-columns: auto 1fr;
+    
         grid-template-areas:
             "icon meta"
+            "title title"
             "content content"
             "image image";
+    
+        gap: 16px;
+    }
 
-        gap:16px;
+    .award-title h3 {
+        font-size: 1.2rem;
+        text-align: left;
+        white-space: normal;
     }
 
     .award-icon{
