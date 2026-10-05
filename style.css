@@ -912,6 +912,7 @@ nav a.active::after{
     grid-area: meta;
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 10px;
 }
 
@@ -1343,6 +1344,10 @@ nav a.active::after{
     font-size: 1.3rem;
 }
 
+.publication-mobile-header {
+    display: none;
+}
+
 
 /* Publication Content */
 
@@ -1378,6 +1383,7 @@ nav a.active::after{
 }
 
 .publication-year {
+    margin-left: auto;
     color: var(--text-muted);
     font-size: 0.9rem;
 }
@@ -2112,6 +2118,10 @@ footer p{
         justify-self:center;
     }
 
+    .award-meta{
+        width:100%;
+    }
+
 
     /* ===========================
        CERTIFICATIONS
@@ -2197,9 +2207,31 @@ footer p{
         flex-direction:column;
     }
 
-    .publication-icon{
+    .publication-desktop-icon,
+    .publication-desktop-meta{
+        display:none;
+    }
+
+    .publication-mobile-header{
+        display:flex;
+        align-items:center;
+        width:100%;
+        gap:12px;
+    }
+
+    .publication-mobile-header .publication-icon{
         width:42px;
         height:42px;
+    }
+
+    .publication-mobile-header .publication-meta{
+        flex:1;
+        min-width:0;
+        margin-bottom:0;
+    }
+
+    .publication-content{
+        width:100%;
     }
 
     .publication-content h3{
