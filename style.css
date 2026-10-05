@@ -2067,11 +2067,13 @@ footer p{
     }
 
     .project-links{
-        flex-direction:column;
+        flex-direction:row;
+        justify-content: center;
+        gap: 10px;
     }
 
     .project-links a{
-        width:100%;
+        width:auto;
     }
 
 
@@ -2306,7 +2308,7 @@ footer p{
 
     .resume-btn{
         justify-content:center;
-        width:100%;
+        width:auto;
         padding:12px 16px;
     }
 
@@ -2332,14 +2334,28 @@ footer p{
         font-size:1.1rem;
     }
 
-    .contact-buttons{
-        flex-direction:column;
-        align-items:stretch;
+    .project-links {
+        flex-direction: row;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .project-links a {
+        width: auto;
+    }
+
+    .contact-buttons {
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 12px;
     }
 
     .primary-btn,
-    .secondary-btn{
-        width:100%;
+    .secondary-btn {
+        width: auto;
+        min-width: 0;
+        padding: 12px 16px;
     }
 
     #backToTop{
