@@ -242,10 +242,134 @@ nav a.active::after{
     transform:scale(1.06);
 }
 
-.coin-front img{
+.profile-photo-shell{
+    position:relative;
+    width:100%;
+    height:100%;
+}
+
+.profile-photo-loader{
+    position:absolute;
+    inset:0;
+    z-index:1;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:
+        radial-gradient(circle at 30% 20%, rgba(108,182,255,.22), transparent 55%),
+        linear-gradient(
+            120deg,
+            #111827 0%,
+            #1a2330 35%,
+            #243044 50%,
+            #1a2330 65%,
+            #111827 100%
+        );
+    background-size:200% 200%;
+
+    animation:profile-shimmer 2.2s ease-in-out infinite;
+}
+
+.profile-photo-loader::before{
+    content:"";
+    position:absolute;
+    inset:14%;
+
+    border:2px dashed rgba(108,182,255,.45);
+    border-radius:50%;
+
+    animation:profile-orbit 5s linear infinite;
+}
+
+.profile-photo-loader i{
+    position:relative;
+    z-index:1;
+
+    font-size:clamp(2.8rem, 8vw, 3.4rem);
+    color:rgba(108,182,255,.85);
+
+    animation:profile-icon-pulse 1.4s ease-in-out infinite;
+}
+
+.profile-photo{
     width:100%;
     height:100%;
     object-fit:cover;
+
+    opacity:0;
+    filter:blur(14px);
+    transform:scale(1.04);
+
+    transition:
+        opacity .55s ease,
+        filter .65s ease,
+        transform .65s ease;
+}
+
+.profile-photo-shell.is-loaded .profile-photo{
+    opacity:1;
+    filter:blur(0);
+    transform:scale(1);
+}
+
+.profile-photo-shell.is-loaded .profile-photo-loader{
+    opacity:0;
+    visibility:hidden;
+    transition:opacity .45s ease, visibility .45s ease;
+}
+
+@keyframes profile-shimmer{
+    0%{
+        background-position:0% 50%;
+    }
+    50%{
+        background-position:100% 50%;
+    }
+    100%{
+        background-position:0% 50%;
+    }
+}
+
+@keyframes profile-orbit{
+    from{
+        transform:rotate(0deg);
+    }
+    to{
+        transform:rotate(360deg);
+    }
+}
+
+@keyframes profile-icon-pulse{
+    0%,
+    100%{
+        opacity:.55;
+        transform:scale(.94);
+    }
+    50%{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+@media (prefers-reduced-motion: reduce){
+    .profile-photo-loader{
+        animation:none;
+    }
+
+    .profile-photo-loader::before{
+        animation:none;
+    }
+
+    .profile-photo-loader i{
+        animation:none;
+        opacity:.85;
+    }
+
+    .profile-photo{
+        transition:opacity .3s ease;
+    }
 }
 
 .coin-back{

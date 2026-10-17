@@ -56,7 +56,18 @@
                 <div class="coin-inner">
 
                     <div class="coin-face coin-front">
-                        <img src="images/self.png" alt="Shiv Modi">
+                        <div class="profile-photo-shell" aria-busy="true" aria-label="Loading profile photo">
+                            <div class="profile-photo-loader" aria-hidden="true">
+                                <i class="fa-solid fa-user"></i>
+                            </div>
+                            <img
+                                class="profile-photo"
+                                src="images/self.png"
+                                alt="Shiv Modi"
+                                decoding="async"
+                                fetchpriority="high"
+                            >
+                        </div>
                     </div>
 
                     <div class="coin-face coin-back">

@@ -381,6 +381,33 @@ viewport.addEventListener("touchend", (event) => {
 
 const coin = document.querySelector(".coin-inner");
 
+// ===============================
+// Profile Photo Loader
+// ===============================
+
+const profilePhotoShell = document.querySelector(".profile-photo-shell");
+const profilePhoto = document.querySelector(".profile-photo");
+
+function markProfilePhotoLoaded() {
+    if (!profilePhotoShell) {
+        return;
+    }
+
+    profilePhotoShell.classList.add("is-loaded");
+    profilePhotoShell.setAttribute("aria-busy", "false");
+}
+
+if (profilePhoto && profilePhotoShell) {
+    if (profilePhoto.complete && profilePhoto.naturalWidth > 0) {
+        markProfilePhotoLoaded();
+    } else {
+        profilePhoto.addEventListener("load", markProfilePhotoLoaded, { once: true });
+        profilePhoto.addEventListener("error", () => {
+            profilePhotoShell.setAttribute("aria-busy", "false");
+        }, { once: true });
+    }
+}
+
 window.addEventListener("load", () => {
 
     setTimeout(() => {
