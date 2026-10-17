@@ -1450,29 +1450,27 @@ nav a.active::after{
 .publication-link {
     display: inline-flex;
     align-items: center;
-    gap: 8px;
-
-    padding: 8px 14px;
+    gap: 7px;
 
     color: #58a6ff;
-    background: rgba(88, 166, 255, 0.08);
-    border: 1px solid #30363d;
-    border-radius: 8px;
 
-    font-size: 0.85rem;
-    font-weight: 600;
+    font-size: 0.9rem;
+    font-weight: 500;
+
     text-decoration: none;
 
     transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+        color 0.3s ease,
+        gap 0.3s ease;
 }
 
 .publication-link:hover {
     color: #79c0ff;
-    background: rgba(88, 166, 255, 0.14);
-    border-color: #58a6ff;
+    gap: 10px;
+}
+
+.publication-link i {
+    font-size: 0.75rem;
 }
 
 
@@ -2556,7 +2554,8 @@ footer p{
         margin-bottom:0;
     }
 
-    .cert-link{
+    .cert-link,
+    .publication-link{
         align-self:flex-start;
         margin-top:auto;
         padding:8px 12px;
