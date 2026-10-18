@@ -603,6 +603,28 @@ nav a.active::after{
     line-height:1.7;
 }
 
+.experience-header .experience-note{
+    margin-top:10px;
+    margin-bottom:0;
+    max-width:42rem;
+
+    color:var(--text-muted);
+    font-size:.9rem;
+    font-style:italic;
+    line-height:1.6;
+}
+
+.experience-header .experience-note a{
+    color:var(--primary);
+    font-style:italic;
+    text-decoration:underline;
+    text-underline-offset:2px;
+}
+
+.experience-header .experience-note a:hover{
+    color:var(--primary-hover);
+}
+
 /* Responsibilities */
 
 .experience-card ul{
